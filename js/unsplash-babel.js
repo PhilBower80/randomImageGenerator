@@ -6,7 +6,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 var key = '-V-yTOcwDt6CT-UEuernJ8sQiibfyRKoKw8YvpU1mP0';
 var searchForm = document.querySelector('.search-form');
-var image = document.querySelector('.image'); // step three
+var image = document.querySelector('.image-container'); // step three
 
 var getPhoto = /*#__PURE__*/function () {
   var _ref = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(searchRequest) {
@@ -42,14 +42,14 @@ var getPhoto = /*#__PURE__*/function () {
   return function getPhoto(_x) {
     return _ref.apply(this, arguments);
   };
-}();
+}(); // let author = null;
+// let altDesc = null;
+// let description = null;
+// let thumbPhoto = null;
+// let regularPhoto = null;
+// let photoId = null;
+// step two
 
-var author = null;
-var altDesc = null;
-var description = null;
-var thumbPhoto = null;
-var regularPhoto = null;
-var photoId = null; // step two
 
 var updateImage = /*#__PURE__*/function () {
   var _ref2 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2(search) {
@@ -67,9 +67,8 @@ var updateImage = /*#__PURE__*/function () {
             altDesc = searchDets.alt_description;
             thumbPhoto = searchDets.urls.thumb;
             regularPhoto = searchDets.urls.regular;
-            photoId = searchDets.id; // console.log(searchDets); // this has been replaced by the .then .catch in eventListener
-
-            image.innerHTML = "\n\t<img src=".concat(searchDets.urls.regular, " alt=").concat(searchDets.description, " class=\"image-size responsive-img center-block\">\n\t<p class='center-align'>Photo by: ").concat(searchDets.user.name, "</p>\n\t<p class='center-align'>Title: ").concat(searchDets.alt_description, "</p>\n\t");
+            photoId = searchDets.id;
+            image.innerHTML = "\n\t<img src=".concat(searchDets.urls.regular, " alt=").concat(searchDets.description, " class=\"image responsive-img center-block\">\n\t<p class='center-align'>Photo by: ").concat(searchDets.user.name, "</p>\n\t<p class='center-align'>Title: ").concat(searchDets.alt_description, "</p>\n\t");
             return _context2.abrupt("return", searchDets);
 
           case 10:

@@ -3,19 +3,12 @@
 var loginMsg = document.querySelector('#login-conf-msg');
 var loginForm = document.querySelector('#login-form');
 var logout = document.querySelector('#logout');
-var userList = document.querySelector('.favorites');
+var savedFavorites = document.querySelector('.favorites');
 var activeUser = localStorage.getItem('user');
 var filteredResults = null;
 
 if (localStorage.getItem('favorites') === null) {
-  var _favorites = [{
-    email: 'admin',
-    author: '',
-    description: '',
-    thumb: '',
-    regular: '',
-    id: ''
-  }];
+  var _favorites = [];
   localStorage.setItem('favorites', JSON.stringify(_favorites));
 } else {
   console.log('favorites exist in local storage already');
@@ -25,6 +18,8 @@ var favorites = JSON.parse(localStorage.getItem('favorites')); // user login
 
 loginForm.addEventListener('submit', function (e) {
   e.preventDefault();
+  var html = "";
+  savedFavorites.innerHTML = html;
   var email = loginForm.email.value.trim();
   localStorage.setItem('user', email);
   loginMsg.innerText = "Welcome ".concat(email);
@@ -37,7 +32,7 @@ loginForm.addEventListener('submit', function (e) {
   }, 3000); // console.log('user logged in');
 }); // user logout
 
-logout.addEventListener('click', function (e) {
+var userLogout = logout.addEventListener('click', function (e) {
   e.preventDefault();
   localStorage.setItem('user', '');
   console.log('user logged out');
@@ -68,9 +63,9 @@ var getFavorites = function getFavorites() {
 
 var outputToHTML = function outputToHTML(user) {
   // output user.email to user userList
-  var html = "\n  <li class=\"output\">\n    <img src=\"".concat(user.thumb, "\" alt=\"").concat(user.description, "\">\n  </li>\n\t"); // userList.innerHTML = '';
+  var html = "\n  <li class=\"output\">\n    <img class=\"savedImages\" src=\"".concat(user.regular, "\" alt=\"").concat(user.description, "\">\n  </li>\n\t"); // userList.innerHTML = '';
 
-  userList.innerHTML += html;
+  savedFavorites.innerHTML += html;
 }; // check if user logged in and display content
 
 
@@ -106,4 +101,12 @@ faveBtn.addEventListener('click', function (e) {
   localStorage.setItem('favorites', JSON.stringify(favorites));
   location.reload();
   getFavorites();
+}); // Display favorite image when clicked
+
+var savedImages = document.querySelector('.favorites');
+savedImages.addEventListener('click', function (e) {
+  e.preventDefault();
+  var x = e.target.src; // const x = document.querySelector('.savedImages').src;
+
+  image.innerHTML = "\n\t<img src=".concat(x, " class=\"image responsive-img center-block\">\n\t");
 });
