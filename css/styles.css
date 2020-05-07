@@ -1,0 +1,30 @@
+.image {
+  margin-top: 25px;
+  max-width: 50vw;
+  max-height: 50vh;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -webkit-box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+          box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+}
+
+.search-form {
+  max-width: 50vw;
+}
+
+footer {
+  margin-top: 5rem;
+}
+
+.output {
+  display: inline-block;
+  padding: 10px;
+}
+
+.output img {
+  -o-object-fit: contain;
+     object-fit: contain;
+  width: 150px;
+  height: 150px;
+}
+/*# sourceMappingURL=styles.css.map */

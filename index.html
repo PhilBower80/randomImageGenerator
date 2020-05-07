@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <title>Random Image Generator</title>
+</head>
+
+<body class="blue-grey darken-4 grey-text">
+
+  <!-- NAVBAR -->
+  <nav class="z-depth-0 blue-grey darken-3">
+    <div class="nav-wrapper container">
+      <a href="#" class="brand-logo">
+        <i class="material-icons">camera</i>Random Image Generator
+      </a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li class="logged-in">
+          <a href="#" id="logout">Logout</a>
+        </li>
+        <li class="logged-out">
+          <a href="#" class="modal-trigger" data-target="modal-login">Login</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+
+  <!-- LOGIN MODAL -->
+  <div id="modal-login" class="modal">
+    <div class="modal-content">
+      <h4>Login</h4><br />
+      <form id="login-form">
+        <div class="input-field">
+          <input type="email" id="email" required />
+          <label for="email">Email address</label>
+        </div>
+        <button class="btn yellow darken-2 z-depth-0">Login</button>
+      </form>
+    </div>
+  </div>
+
+
+  <!-- MAIN CONTENT -->
+  <div class="main-content">
+    <div class="container">
+      <div class="row valign-wrapper">
+        <div class="col s10">
+          <form class="form search-form left">
+            <div class="input-field">
+              <input class=" white-text type=" text" id="search" name="search" placeholder="narrow down your search...">
+              <input class="btn" type="submit" value="generate">
+            </div>
+          </form>
+        </div>
+        <div class="col s2">
+          <div class="right">
+            <a href="#" id="favorite-btn" class="btn-floating btn-large waves-effect waves-light red"><i
+                class="material-icons">favorite</i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div id="login-conf-msg"></div>
+  </div>
+
+  <div class="image-container container">
+    <img class="image center-block" src="http://placeimg.com/640/480/any">
+  </div>
+
+
+
+  <div class="container">
+    <ul class="favorites">
+      <h3>Favourites</h3>
+    </ul>
+  </div>
+
+
+  <footer>
+    <div class="container center">
+      <p>&copy; Copyright <strong>Philip Bower</strong> 2020</p>
+    </div>
+  </footer>
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="js/dom.js"></script>
+  <script src="js/unsplash.js"></script>
+  <script src="js/favorites.js"></script>
+
+
+</body>
+
+</html>

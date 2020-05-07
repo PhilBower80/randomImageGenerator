@@ -1,0 +1,18 @@
+https://api.unsplash.com/
+
+Access Key: g1tDRjuXsua8mm858ClDZDmAvWMo1UHlwzNRX2Mwuz0
+Secret Key: FYfzIAUywcCAxytKXpncVJVyXYKRQ6ZK6RwaCjTYDls
+
+
+Checklist
+Hotlink photos
+Photos must be hotlinked to the original image URL on Unsplash
+Trigger downloads
+When a user in your application uses a photo, it triggers an event to the download endpoint
+Your app does not use the Unsplash logo and is not named similarly to Unsplash
+Your app must look visually dinstinct from Unsplash and not use ‘Unsplash’ in the name (ex: Unsplasher)
+The application description and name included here are accurate
+We should be able to know what you're building just by reading the name and description of your application
+Attribute photographer and Unsplash
+(Add screenshots below)
+Photographer’s full name and Unsplash are properly attributed and linked (ex: Photo by Annie Spratt on Unsplash)
