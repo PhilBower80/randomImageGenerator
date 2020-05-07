@@ -27,4 +27,8 @@ footer {
   width: 150px;
   height: 150px;
 }
+
+.favorites li {
+  cursor: pointer;
+}
 /*# sourceMappingURL=styles.css.map */
